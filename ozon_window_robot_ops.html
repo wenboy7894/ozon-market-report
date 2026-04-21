@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>擦窗机器人 - Ozon运营全流程</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"Microsoft YaHei",sans-serif;line-height:1.5;color:#222;background:#f5f7fa;font-size:13px}
+.c{max-width:960px;margin:0 auto;padding:12px}
+header{background:linear-gradient(135deg,#1a1a2e,#16213e);color:white;padding:20px;text-align:center;border-radius:8px;margin-bottom:12px}
+header h1{font-size:22px;margin-bottom:4px}
+header p{font-size:13px;opacity:.8}
+nav{background:white;padding:10px 14px;border-radius:8px;margin-bottom:12px;box-shadow:0 1px 3px rgba(0,0,0,.06);display:flex;flex-wrap:wrap;gap:6px}
+nav a{display:inline-block;padding:4px 10px;border-radius:15px;font-size:12px;text-decoration:none;color:#1a1a2e;background:#f0f4ff;font-weight:bold;transition:all .2s}
+nav a:hover,nav a.active{background:#e94560;color:white}
+.box{background:white;padding:14px;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,.06);margin:10px 0}
+.box h2{font-size:16px;color:#e94560;margin-bottom:8px;font-weight:bold;border-bottom:2px solid #e94560;padding-bottom:4px}
+.box h3{font-size:13px;color:#1a1a2e;margin:10px 0 4px;font-weight:bold}
+table{width:100%;border-collapse:collapse;font-size:12px;margin:6px 0}
+th,td{padding:5px 6px;text-align:left;border-bottom:1px solid #f0f0f0}
+th{background:#1a1a2e;color:white;font-size:11px;font-weight:normal}
+tr:hover{background:#f8f8f8}
+.tag{display:inline-block;padding:1px 6px;border-radius:8px;font-size:11px;margin:1px;font-weight:bold}
+.t-hot{background:#e94560;color:white}
+.t-ok{background:#28a745;color:white}
+.t-info{background:#17a2b8;color:white}
+.t-warn{background:#ffc107;color:#333}
+.t-gray{background:#e9ecef;color:#555}
+.tip{padding:8px 10px;border-radius:5px;margin:6px 0;font-size:12px}
+.tip-y{background:#fff8e1;border-left:3px solid #ffc107}
+.tip-r{background:#fce4ec;border-left:3px solid #e94560}
+.tip-g{background:#e8f5e9;border-left:3px solid #28a745}
+.tip-b{background:#e3f2fd;border-left:3px solid #2196f3}
+.step{display:flex;align-items:flex-start;gap:10px;margin:8px 0;padding:10px;background:#fafbfc;border-radius:6px;border-left:3px solid #1a1a2e}
+.step-num{background:#e94560;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:bold;font-size:13px;flex-shrink:0}
+.step-content{flex:1}
+.step-content b{color:#1a1a2e}
+.timeline{position:relative;padding-left:20px;margin:10px 0}
+.timeline::before{content:'';position:absolute;left:8px;top:0;bottom:0;width:2px;background:#e94560}
+.tl-item{position:relative;margin:10px 0;padding:8px 12px;background:#fafbfc;border-radius:6px}
+.tl-item::before{content:'';position:absolute;left:-16px;top:12px;width:10px;height:10px;border-radius:50%;background:#e94560;border:2px solid white}
+.tl-item b{color:#e94560}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+@media(max-width:768px){.g2,.g3{grid-template-columns:1fr}}
+.kpi{background:#f0f4ff;padding:10px;border-radius:6px;text-align:center}
+.kpi .num{font-size:18px;font-weight:bold;color:#e94560}
+.kpi .label{font-size:11px;color:#666;margin-top:2px}
+ul{margin:2px 0 2px 14px}
+li{margin:2px 0}
+details{margin:6px 0;font-size:12px}
+details summary{cursor:pointer;font-weight:bold;color:#1a1a2e;padding:4px 0}
+details summary:hover{color:#e94560}
+details[open] summary{color:#e94560}
+.back{display:inline-block;margin:10px 0;padding:6px 14px;background:#1a1a2e;color:white;text-decoration:none;border-radius:6px;font-size:12px}
+.back:hover{background:#e94560}
+footer{text-align:center;padding:12px;color:#aaa;font-size:11px}
+.checklist{list-style:none;margin-left:0}
+.checklist li{padding:3px 0;border-bottom:1px dashed #eee}
+.checklist li::before{content:'☐ ';color:#e94560;font-weight:bold}
+.checklist li.done::before{content:'☑ ';color:#28a745}
+</style>
+</head>
+<body>
+<div class="c">
+
+<a href="ozon_full_plan.html" class="back">← 返回总计划</a>
+
+<header>
+<h1>🤖 擦窗机器人 Ozon运营全流程</h1>
+<p>从选品→认证→上架→推广→售后 完整SOP</p>
+</header>
+
+<nav>
+<a href="#overview">总览</a>
+<a href="#eac">EAC认证</a>
+<a href="#sourcing">选品采购</a>
+<a href="#logistics">物流入仓</a>
+<a href="#listing">Listing上架</a>
+<a href="#ads">广告推广</a>
+<a href="#ops">日常运营</a>
+<a href="#timeline">时间线</a>
+<a href="#cost">成本核算</a>
+<a href="#checklist">Checklist</a>
+</nav>
+
+<!-- 总览 -->
+<div class="box" id="overview">
+<h2>📊 项目总览</h2>
+<div class="g3">
+<div class="kpi"><div class="num">$8-12M</div><div class="label">俄罗斯擦窗机年市场规模</div></div>
+<div class="kpi"><div class="num">20-30%</div><div class="label">年增长率</div></div>
+<div class="kpi"><div class="num">3-5月</div><div class="label">旺季（春季大扫除）</div></div>
+</div>
+<div class="tip tip-g" style="margin-top:8px">
+<b>核心策略：</b>以中端价位（8,000-15,000₽）切入，主打性价比+俄语售后，避开HOBOT高端垄断区，抢占国产品牌空白带
+</div>
+<div class="g2" style="margin-top:8px">
+<div style="background:#f0f4ff;padding:10px;border-radius:6px">
+<b>目标客群</b>
+<ul>
+<li>高层公寓住户（20+层新建住宅）</li>
+<li>25-45岁女性为主</li>
+<li>追求安全+省力的家庭用户</li>
+<li>对价格敏感的中产家庭</li>
+</ul>
+</div>
+<div style="background:#f0f4ff;padding:10px;border-radius:6px">
+<b>竞争格局</b>
+<ul>
+<li>HOBOT（台湾）：高端霸主，35-40%份额</li>
+<li>iBoto（俄本土）：中端主力，20-25%</li>
+<li>Ecovacs/科沃斯：品牌认知度高</li>
+<li>国产白牌：价格战区，利润薄</li>
+</ul>
+</div>
+</div>
+</div>
+
+<!-- EAC认证 -->
+<div class="box" id="eac">
+<h2>📜 EAC认证全流程</h2>
+
+<div class="tip tip-r">
+<b>强制要求：</b>擦窗机器人属于低压电气设备，在EAEU（欧亚经济联盟）市场销售必须通过EAC认证，无证销售将被海关扣押+罚款
+</div>
+
+<h3>适用法规</h3>
+<table>
+<tr><th>法规编号</th><th>名称</th><th>适用内容</th><th>认证形式</th></tr>
+<tr><td><span class="tag t-hot">TR CU 004/2011</span></td><td>低压设备安全</td><td>电气安全、绝缘、接地、过热保护</td><td>EAC证书 或 EAC声明</td></tr>
+<tr><td><span class="tag t-info">TR CU 020/2011</span></td><td>电磁兼容性(EMC)</td><td>电磁辐射、抗干扰</td><td>EAC声明</td></tr>
+<tr><td><span class="tag t-warn">TR EAEU 037/2016</span></td><td>有害物质限制(RoHS)</td><td>铅、汞、镉等有害物质含量</td><td>EAC声明</td></tr>
+</table>
+
+<h3>认证 vs 声明 — 选哪个？</h3>
+<div class="g2">
+<div style="background:#fce4ec;padding:10px;border-radius:6px">
+<b>EAC合格证书 (Сертификат)</b>
+<ul>
+<li>由认证机构签发</li>
+<li>需要工厂审核或型式试验</li>
+<li>有效期：1-5年</li>
+<li>费用：$2,500-5,000/型号</li>
+<li>周期：4-8周</li>
+<li>信誉度更高，大客户认可</li>
+</ul>
+</div>
+<div style="background:#e8f5e9;padding:10px;border-radius:6px">
+<b>EAC符合性声明 (Декларация) ⭐推荐</b>
+<ul>
+<li>由申请人自行声明（需测试报告）</li>
+<li>基于实验室测试结果</li>
+<li>有效期：1-5年</li>
+<li>费用：$1,000-2,500/型号</li>
+<li>周期：2-4周</li>
+<li>适合中小卖家，性价比高</li>
+</ul>
+</div>
+</div>
+
+<div class="tip tip-y" style="margin-top:8px">
+<b>建议：</b>首批用EAC声明（Декларация），成本低、速度快。等销量稳定后再升级为EAC证书提升品牌信任度
+</div>
+
+<h3>认证流程（6步）</h3>
+<div class="step"><div class="step-num">1</div><div class="step-content"><b>准备技术文档</b><br>产品说明书（俄语）、电路图、零部件清单(BOM)、产品照片、工厂ISO证书（如有）</div></div>
+<div class="step"><div class="step-num">2</div><div class="step-content"><b>选择认证机构</b><br>推荐：SerConS（俄罗斯本土大型机构）、SGS Russia、TÜV Rheinland Russia、中国代理如"俄易通"等<br><span class="tag t-info">本土店优势：可通过俄罗斯合伙人/代理公司作为申请人</span></div></div>
+<div class="step"><div class="step-num">3</div><div class="step-content"><b>送样测试</b><br>送3-5台样品到EAEU认可实验室<br>测试项目：电气安全(IEC 60335)、EMC(CISPR 14)、RoHS有害物质<br>测试周期：2-3周</div></div>
+<div class="step"><div class="step-num">4</div><div class="step-content"><b>获取测试报告</b><br>实验室出具俄文测试报告（Протокол испытаний）<br>报告需包含所有TR CU要求的测试项目</div></div>
+<div class="step"><div class="step-num">5</div><div class="step-content"><b>注册声明/证书</b><br>在EAEU统一注册系统(FSA)登记<br>获得唯一注册编号<br>声明自注册日起生效</div></div>
+<div class="step"><div class="step-num">6</div><div class="step-content"><b>产品标识</b><br>在产品和包装上加贴EAC标志<br>标注：制造商、进口商、型号、电压、生产日期<br>所有标识必须有俄语版本</div></div>
+
+<h3>EAC标识要求</h3>
+<div style="background:#f0f4ff;padding:10px;border-radius:6px;margin:6px 0">
+<b>产品铭牌必须包含（俄语）：</b>
+<ul>
+<li>EAC标志（不小于5mm）</li>
+<li>产品名称和型号</li>
+<li>制造商名称和地址</li>
+<li>进口商/授权代表名称和地址（俄罗斯境内）</li>
+<li>额定电压和功率</li>
+<li>生产日期或批次号</li>
+<li>适用的TR CU编号</li>
+</ul>
+</div>
+
+<h3>费用明细</h3>
+<table>
+<tr><th>项目</th><th>EAC声明</th><th>EAC证书</th><th>备注</th></tr>
+<tr><td>实验室测试费</td><td>$800-1,500</td><td>$800-1,500</td><td>3项法规合并测试</td></tr>
+<tr><td>认证机构服务费</td><td>$300-500</td><td>$1,000-2,000</td><td>含文件审核+注册</td></tr>
+<tr><td>翻译费（技术文档俄语）</td><td>$200-400</td><td>$200-400</td><td>说明书+标签</td></tr>
+<tr><td>样品+运费</td><td>$300-500</td><td>$300-500</td><td>3-5台样品</td></tr>
+<tr><td>工厂审核（如需）</td><td>—</td><td>$1,500-3,000</td><td>证书方案可能要求</td></tr>
+<tr><td style="font-weight:bold;color:#e94560">合计</td><td style="font-weight:bold;color:#e94560">$1,600-2,900</td><td style="font-weight:bold;color:#e94560">$3,800-7,400</td><td>单型号费用</td></tr>
+</table>
+
+<div class="tip tip-b">
+<b>省钱技巧：</b>①多型号同系列可合并测试，第2个型号起费用减半 ②找中国有EAEU资质的实验室（如深圳、宁波），测试费比俄罗斯本土便宜30-40% ③首批只认证1-2个主力SKU
+</div>
+
+<h3>常见认证机构</h3>
+<table>
+<tr><th>机构</th><th>类型</th><th>优势</th><th>参考费用</th></tr>
+<tr><td>SerConS</td><td>俄罗斯本土</td><td>速度快，价格适中</td><td>$1,500-3,000</td></tr>
+<tr><td>SGS Russia</td><td>国际机构</td><td>全球认可度高</td><td>$2,500-5,000</td></tr>
+<tr><td>TÜV Rheinland</td><td>国际机构</td><td>欧洲+EAEU双认证</td><td>$3,000-6,000</td></tr>
+<tr><td>俄易通/中俄认证</td><td>中国代理</td><td>中文沟通，一站式服务</td><td>$1,200-2,500</td></tr>
+<tr><td>宁波/深圳检测机构</td><td>中国实验室</td><td>测试费低，可出EAEU报告</td><td>$800-1,800</td></tr>
+</table>
+</div>
+
+
+<!-- 选品采购 -->
+<div class="box" id="sourcing">
+<h2>🏭 选品与采购</h2>
+
+<h3>推荐产品规格</h3>
+<table>
+<tr><th>参数</th><th>基础款（引流）</th><th>主力款（利润）</th><th>高端款（形象）</th></tr>
+<tr><td>目标售价(₽)</td><td>5,000-8,000</td><td>8,000-15,000</td><td>15,000-22,000</td></tr>
+<tr><td>吸附方式</td><td>真空吸附</td><td>真空+风机双保险</td><td>真空+风机+UPS电池</td></tr>
+<tr><td>清洁方式</td><td>旋转擦拭</td><td>往复式/履带式</td><td>超声波喷水+AI路径</td></tr>
+<tr><td>噪音</td><td>≤70dB</td><td>≤65dB</td><td>≤60dB</td></tr>
+<tr><td>安全绳</td><td>✅ 必须</td><td>✅ 必须</td><td>✅ 必须</td></tr>
+<tr><td>遥控方式</td><td>遥控器</td><td>遥控器+APP</td><td>APP+语音助手</td></tr>
+<tr><td>适用玻璃厚度</td><td>3-10mm</td><td>3-15mm</td><td>3-20mm（含无框）</td></tr>
+<tr><td>UPS断电保护</td><td>❌</td><td>✅ 20-30分钟</td><td>✅ 30+分钟</td></tr>
+<tr><td>出厂价(¥)</td><td>180-280</td><td>350-550</td><td>600-900</td></tr>
+</table>
+
+<div class="tip tip-r">
+<b>俄罗斯市场刚需功能：</b>①安全绳（高层必备，无安全绳=差评）②断电保护UPS（停电频繁地区）③低温工作能力（冬季室外窗户）④厚玻璃兼容（俄罗斯双层/三层玻璃常见）
+</div>
+
+<h3>国内供应商集中地</h3>
+<div class="g2">
+<div style="background:#f0f4ff;padding:10px;border-radius:6px">
+<b>深圳/东莞</b>
+<ul>
+<li>擦窗机器人产业链最集中</li>
+<li>代表工厂：科沃斯代工厂群、玻妞供应链</li>
+<li>1688搜索：擦窗机器人 OEM/ODM</li>
+<li>MOQ：通常100-500台起</li>
+</ul>
+</div>
+<div style="background:#f0f4ff;padding:10px;border-radius:6px">
+<b>宁波/杭州</b>
+<ul>
+<li>小家电出口基地</li>
+<li>EAC认证配套服务成熟</li>
+<li>物流到俄罗斯线路多</li>
+<li>部分工厂有现成EAC证书</li>
+</ul>
+</div>
+</div>
+
+<h3>采购谈判要点</h3>
+<ul>
+<li><b>首单量：</b>建议100-200台试水，谈到最低MOQ</li>
+<li><b>包装定制：</b>要求俄语包装+EAC标识预印（工厂加$0.5-1/台）</li>
+<li><b>质检标准：</b>要求出厂全检，特别是吸力测试和安全绳拉力测试</li>
+<li><b>配件：</b>多配2-3套擦窗布（售后最常见需求）</li>
+<li><b>电压：</b>确认220V/50Hz版本（俄罗斯标准），插头用欧标圆头</li>
+<li><b>说明书：</b>要求提供俄语版（工厂通常有英语版，需额外翻译）</li>
+</ul>
+</div>
+
+<!-- 物流入仓 -->
+<div class="box" id="logistics">
+<h2>🚚 物流与FBO入仓</h2>
+
+<h3>物流路线对比</h3>
+<table>
+<tr><th>路线</th><th>时效</th><th>费用($/kg)</th><th>适用场景</th><th>备注</th></tr>
+<tr><td><span class="tag t-ok">铁路（中欧班列）</span></td><td>15-20天</td><td>$3-5</td><td>大批量补货</td><td>经哈萨克斯坦入境，性价比最高</td></tr>
+<tr><td><span class="tag t-info">海运+铁路</span></td><td>25-35天</td><td>$2-3.5</td><td>非旺季大批量</td><td>上海→海参崴→莫斯科</td></tr>
+<tr><td><span class="tag t-hot">空运</span></td><td>5-7天</td><td>$8-15</td><td>首批/旺季补货</td><td>直飞莫斯科SVO/DME</td></tr>
+<tr><td><span class="tag t-warn">卡航</span></td><td>12-18天</td><td>$4-7</td><td>中等批量</td><td>经哈萨克斯坦/吉尔吉斯斯坦</td></tr>
+</table>
+
+<div class="tip tip-y">
+<b>建议：</b>首批100-200台走空运快速测试市场（约$1,200-2,000运费），后续补货走铁路降低成本
+</div>
+
+<h3>产品物流参数</h3>
+<table>
+<tr><th>参数</th><th>单台</th><th>100台整批</th></tr>
+<tr><td>产品重量</td><td>2-3.5kg</td><td>200-350kg</td></tr>
+<tr><td>包装尺寸</td><td>约40×35×15cm</td><td>约2-3 CBM</td></tr>
+<tr><td>抛重比</td><td colspan="2">实重计费为主（密度较高）</td></tr>
+</table>
+
+<h3>Ozon FBO入仓流程</h3>
+<div class="step"><div class="step-num">1</div><div class="step-content"><b>创建入库申请</b><br>在Ozon卖家后台 → 物流 → FBO → 创建供货单<br>选择目标仓库（推荐莫斯科仓，覆盖最广）</div></div>
+<div class="step"><div class="step-num">2</div><div class="step-content"><b>打印标签</b><br>每件商品贴Ozon条码标签（从后台下载）<br>外箱贴供货单号+箱号标签<br><span class="tag t-warn">标签必须清晰可扫描，否则拒收</span></div></div>
+<div class="step"><div class="step-num">3</div><div class="step-content"><b>包装要求</b><br>单品：气泡膜包裹 → 放入产品彩盒 → 贴Ozon标签<br>外箱：不超过20kg/箱，尺寸≤120×80×80cm<br>每箱内放装箱清单</div></div>
+<div class="step"><div class="step-num">4</div><div class="step-content"><b>预约送仓</b><br>在后台预约送货时间段<br>莫斯科仓地址在后台确认（多个仓库轮换）<br>可委托俄罗斯本地物流公司送仓</div></div>
+<div class="step"><div class="step-num">5</div><div class="step-content"><b>仓库验收</b><br>Ozon仓库收货后1-3个工作日完成验收<br>验收通过后商品状态变为"可售"<br>如有问题会标记"待处理"并通知卖家</div></div>
+
+<h3>清关注意事项</h3>
+<div style="background:#fce4ec;padding:10px;border-radius:6px;margin:6px 0">
+<ul>
+<li><b>EAC证书/声明：</b>清关必备，海关会核查</li>
+<li><b>HS编码：</b>8479.89（其他机械器具）或 8508.11（电动吸尘器类）— 需与报关行确认</li>
+<li><b>关税：</b>约5-10%（取决于HS编码）</li>
+<li><b>增值税(VAT)：</b>20%（清关时缴纳）</li>
+<li><b>进口商：</b>本土店需要俄罗斯法人作为进口商</li>
+<li><b>原产地证：</b>建议办理，可能享受优惠税率</li>
+</ul>
+</div>
+</div>
+
+
+<!-- Listing上架 -->
+<div class="box" id="listing">
+<h2>📝 Listing上架优化</h2>
+
+<h3>标题公式</h3>
+<div style="background:#f0f4ff;padding:10px;border-radius:6px;margin:6px 0;font-size:12px">
+<b>模板：</b>[品牌] + [产品类型] + [核心卖点1] + [核心卖点2] + [适用场景]<br>
+<b>示例：</b>Робот для мытья окон [品牌] с ультразвуковым распылением воды, автоматическая очистка стёкол, пульт ДУ + приложение, для квартир и офисов<br>
+<b>字符限制：</b>Ozon标题建议≤150字符
+</div>
+
+<h3>核心关键词（俄语SEO）</h3>
+<table>
+<tr><th>俄语关键词</th><th>中文含义</th><th>月搜索量</th><th>竞争度</th></tr>
+<tr><td>робот для мытья окон</td><td>擦窗机器人</td><td>80,000+</td><td><span class="tag t-hot">高</span></td></tr>
+<tr><td>мойщик окон робот</td><td>窗户清洁机器人</td><td>30,000+</td><td><span class="tag t-warn">中</span></td></tr>
+<tr><td>робот стеклоочиститель</td><td>玻璃清洁机器人</td><td>15,000+</td><td><span class="tag t-warn">中</span></td></tr>
+<tr><td>автоматический мойщик окон</td><td>自动擦窗器</td><td>8,000+</td><td><span class="tag t-ok">低</span></td></tr>
+<tr><td>робот пылесос для окон</td><td>窗户吸尘机器人</td><td>5,000+</td><td><span class="tag t-ok">低</span></td></tr>
+<tr><td>мытье окон на высоте</td><td>高层擦窗</td><td>12,000+</td><td><span class="tag t-ok">低</span></td></tr>
+</table>
+
+<h3>主图要求（7-10张）</h3>
+<table>
+<tr><th>图片序号</th><th>内容</th><th>要求</th></tr>
+<tr><td>图1（主图）</td><td>产品45°角白底图</td><td>900×1200px以上，白底，产品占80%画面</td></tr>
+<tr><td>图2</td><td>使用场景图</td><td>机器人贴在高层窗户上工作</td></tr>
+<tr><td>图3</td><td>安全功能展示</td><td>安全绳+UPS断电保护特写</td></tr>
+<tr><td>图4</td><td>APP控制界面</td><td>手机操控截图+遥控器</td></tr>
+<tr><td>图5</td><td>清洁效果对比</td><td>清洁前后对比（左脏右净）</td></tr>
+<tr><td>图6</td><td>配件全家福</td><td>主机+遥控器+擦布+安全绳+充电器</td></tr>
+<tr><td>图7</td><td>尺寸/参数信息图</td><td>产品尺寸标注+核心参数（俄语）</td></tr>
+<tr><td>图8-10</td><td>卖点信息图</td><td>图文结合展示3大核心卖点（俄语）</td></tr>
+</table>
+
+<div class="tip tip-y">
+<b>图片注意：</b>①所有文字必须俄语 ②避免出现中文 ③场景图用欧式/俄式家居风格 ④展示窗户类型多样性（平开窗、推拉窗、无框玻璃）
+</div>
+
+<h3>Rich Content（A+图文）</h3>
+<div style="background:#f0f4ff;padding:10px;border-radius:6px;margin:6px 0">
+<b>Ozon支持Rich Content，建议制作：</b>
+<ul>
+<li>品牌故事模块（建立信任）</li>
+<li>产品对比表（vs竞品优势）</li>
+<li>使用教程图解（降低使用门槛）</li>
+<li>FAQ模块（解答常见疑虑：安全性、噪音、适用玻璃类型）</li>
+<li>视频：30-60秒产品演示视频（俄语配音或字幕）</li>
+</ul>
+</div>
+
+<h3>商品描述要点（俄语）</h3>
+<ul>
+<li><b>开头：</b>直击痛点 — "Устали мыть окна на высоте?"（厌倦了高空擦窗？）</li>
+<li><b>安全：</b>强调安全绳+UPS+防跌落传感器</li>
+<li><b>智能：</b>APP控制、自动路径规划、边缘检测</li>
+<li><b>兼容：</b>列出适用玻璃类型和厚度范围</li>
+<li><b>售后：</b>强调俄语客服、保修政策、配件可购</li>
+<li><b>结尾：</b>包装清单（避免收到后产生疑问）</li>
+</ul>
+
+<h3>定价策略</h3>
+<table>
+<tr><th>款式</th><th>成本价(₽)</th><th>建议售价(₽)</th><th>竞品参考价(₽)</th><th>毛利率</th></tr>
+<tr><td>基础款</td><td>2,800-3,500</td><td>5,990-7,990</td><td>HOBOT同级 12,000+</td><td>50-55%</td></tr>
+<tr><td>主力款</td><td>4,500-6,000</td><td>9,990-14,990</td><td>HOBOT 2S 18,000+</td><td>45-55%</td></tr>
+<tr><td>高端款</td><td>7,000-9,500</td><td>16,990-21,990</td><td>HOBOT S6 Pro 30,000+</td><td>45-50%</td></tr>
+</table>
+</div>
+
+<!-- 广告推广 -->
+<div class="box" id="ads">
+<h2>📢 Ozon广告推广策略</h2>
+
+<h3>Ozon广告类型</h3>
+<table>
+<tr><th>广告类型</th><th>展示位置</th><th>计费方式</th><th>适用阶段</th><th>建议预算</th></tr>
+<tr><td><span class="tag t-hot">搜索推广</span></td><td>搜索结果页前列</td><td>CPC竞价（按点击付费）</td><td>新品期+成长期</td><td>500-2,000₽/天</td></tr>
+<tr><td><span class="tag t-info">商品推广</span></td><td>商品详情页"相似商品"</td><td>CPC竞价</td><td>抢竞品流量</td><td>300-1,000₽/天</td></tr>
+<tr><td><span class="tag t-warn">品牌货架</span></td><td>搜索结果顶部横幅</td><td>CPM（按千次展示）</td><td>品牌建设期</td><td>需3+SKU</td></tr>
+<tr><td><span class="tag t-ok">促销活动</span></td><td>Ozon促销专区</td><td>折扣让利</td><td>冲销量/清库存</td><td>按折扣力度</td></tr>
+</table>
+
+<h3>新品推广节奏（12周计划）</h3>
+<div class="timeline">
+<div class="tl-item">
+<b>第1-2周：冷启动</b><br>
+• 开启搜索推广，出价高于建议价20-30%抢曝光<br>
+• 目标：日均10-20次点击，积累数据<br>
+• 同步：找5-10个种子用户做带图评价<br>
+• 预算：800-1,500₽/天
+</div>
+<div class="tl-item">
+<b>第3-4周：数据优化</b><br>
+• 分析搜索词报告，否定无效词<br>
+• 降低高CPC低转化词出价<br>
+• 加大高转化词预算<br>
+• 开启商品推广，定向竞品HOBOT/iBoto详情页<br>
+• 预算：1,000-2,000₽/天
+</div>
+<div class="tl-item">
+<b>第5-8周：放量期</b><br>
+• 评价积累到10+条，转化率提升<br>
+• 逐步提高日预算<br>
+• 参加Ozon平台促销活动（周末折扣等）<br>
+• 测试品牌货架广告（如已有3+SKU）<br>
+• 预算：1,500-3,000₽/天
+</div>
+<div class="tl-item">
+<b>第9-12周：稳定期</b><br>
+• 优化ACoS（广告销售成本比）目标≤15%<br>
+• 自然排名提升，逐步降低广告依赖<br>
+• 重点维护评价和问答<br>
+• 预算：根据ROI动态调整
+</div>
+</div>
+
+<div class="tip tip-g">
+<b>关键指标参考：</b>CTR（点击率）目标≥2%，CVR（转化率）目标≥5%，ACoS目标≤15%，ROAS目标≥6
+</div>
+
+<h3>站外引流</h3>
+<ul>
+<li><b>Yandex.Direct：</b>投放"робот для мытья окон"等关键词，引流到Ozon商品页</li>
+<li><b>YouTube/RuTube：</b>找俄罗斯家居博主做开箱测评</li>
+<li><b>Telegram群组：</b>加入俄罗斯智能家居/家电讨论群，软性推广</li>
+<li><b>VK（俄罗斯社交平台）：</b>创建品牌主页，发布使用教程</li>
+</ul>
+</div>
+
+
+<!-- 日常运营 -->
+<div class="box" id="ops">
+<h2>⚙️ 日常运营SOP</h2>
+
+<h3>每日必做</h3>
+<table>
+<tr><th>时间</th><th>事项</th><th>工具/位置</th></tr>
+<tr><td>上午</td><td>查看订单状态、处理退货/售后</td><td>Ozon卖家后台 → 订单</td></tr>
+<tr><td>上午</td><td>回复买家消息（4小时内）</td><td>后台 → 消息中心</td></tr>
+<tr><td>中午</td><td>检查广告数据，调整出价</td><td>后台 → 广告 → Ozon Performance</td></tr>
+<tr><td>下午</td><td>监控库存水位，低于安全库存触发补货</td><td>后台 → FBO库存</td></tr>
+<tr><td>晚上</td><td>查看新评价，及时回复差评</td><td>后台 → 评价管理</td></tr>
+</table>
+
+<h3>每周必做</h3>
+<ul>
+<li>分析广告报表：CTR/CVR/ACoS趋势，优化关键词</li>
+<li>竞品价格监控：HOBOT、iBoto、Ecovacs价格变动</li>
+<li>库存周转分析：计算当前库存可售天数</li>
+<li>评价分析：提取差评关键词，反馈给工厂改进</li>
+<li>搜索排名追踪：核心关键词排名变化</li>
+</ul>
+
+<h3>每月必做</h3>
+<ul>
+<li>P&L利润表：收入-成本-广告-物流-平台费=净利润</li>
+<li>补货计划：根据销售趋势和物流时效制定下月采购计划</li>
+<li>Listing优化：根据搜索词报告更新标题/关键词</li>
+<li>竞品分析报告：新进入者、价格变动、新功能</li>
+<li>客户反馈汇总：产品改进方向</li>
+</ul>
+
+<h3>评价管理策略</h3>
+<div class="g2">
+<div style="background:#e8f5e9;padding:10px;border-radius:6px">
+<b>获取好评</b>
+<ul>
+<li>包裹内放感谢卡（俄语）+使用小贴士</li>
+<li>售后主动跟进：发货后7天发消息询问使用体验</li>
+<li>赠送额外擦窗布（超预期体验）</li>
+<li>快速解决问题 → 引导修改评价</li>
+</ul>
+</div>
+<div style="background:#fce4ec;padding:10px;border-radius:6px">
+<b>处理差评</b>
+<ul>
+<li>24小时内回复，态度诚恳</li>
+<li>提供解决方案（换货/退款/补发配件）</li>
+<li>分析差评原因：产品问题→反馈工厂，使用问题→优化说明书</li>
+<li>常见差评：吸力不够、噪音大、APP连接问题</li>
+</ul>
+</div>
+</div>
+
+<h3>售后常见问题 & 应对</h3>
+<table>
+<tr><th>问题</th><th>频率</th><th>应对方案</th></tr>
+<tr><td>机器人掉落/吸力不足</td><td>高</td><td>检查玻璃是否有贴膜，指导正确使用，必要时换货</td></tr>
+<tr><td>APP无法连接</td><td>中</td><td>提供俄语图文教程，确认WiFi频段(2.4GHz)</td></tr>
+<tr><td>擦不干净/有水痕</td><td>中</td><td>指导正确喷水量+擦布更换频率</td></tr>
+<tr><td>噪音太大</td><td>中</td><td>解释正常工作噪音范围，严重的换货处理</td></tr>
+<tr><td>安全绳/配件损坏</td><td>低</td><td>免费补发配件（提前备库）</td></tr>
+<tr><td>充电问题</td><td>低</td><td>排查充电器/电池，必要时换货</td></tr>
+</table>
+
+<h3>安全库存公式</h3>
+<div style="background:#f0f4ff;padding:10px;border-radius:6px;margin:6px 0">
+<b>安全库存 = 日均销量 × (物流时效 + 缓冲天数)</b><br>
+示例：日均5台 × (铁路20天 + 缓冲10天) = 150台<br>
+<b>补货触发点：</b>当库存 ≤ 安全库存时立即下单<br>
+<b>旺季(3-5月)：</b>安全库存 × 1.5倍
+</div>
+</div>
+
+<!-- 时间线 -->
+<div class="box" id="timeline">
+<h2>📅 项目执行时间线</h2>
+
+<div class="tip tip-b">
+<b>目标：</b>从启动到首单出货约8-10周，赶在3月春季旺季前完成准备
+</div>
+
+<div class="timeline">
+<div class="tl-item">
+<b>第1周：选品定样</b><br>
+• 1688/阿里巴巴联系3-5家工厂，索要样品<br>
+• 确定主力款规格和价格<br>
+• 同步联系EAC认证代理
+</div>
+<div class="tl-item">
+<b>第2周：样品评估</b><br>
+• 收到样品，测试功能、质量、包装<br>
+• 确定最终供应商<br>
+• 提交EAC认证申请+送样
+</div>
+<div class="tl-item">
+<b>第3-4周：认证进行中 + 备货</b><br>
+• EAC测试进行中（2-3周）<br>
+• 同步下首批订单（100-200台）<br>
+• 准备俄语包装设计、说明书翻译<br>
+• 注册/确认Ozon卖家账号
+</div>
+<div class="tl-item">
+<b>第5-6周：生产+认证完成</b><br>
+• 工厂生产+质检<br>
+• EAC声明注册完成<br>
+• 准备Listing素材（拍照、视频、文案翻译）<br>
+• 联系物流商，确认发货方案
+</div>
+<div class="tl-item">
+<b>第7-8周：发货+入仓</b><br>
+• 首批空运发货（5-7天到达）<br>
+• 清关（EAC文件+报关）<br>
+• 送入Ozon FBO仓库<br>
+• 创建Listing，上传素材
+</div>
+<div class="tl-item">
+<b>第9-10周：上线+推广启动</b><br>
+• 商品上架，开启搜索推广<br>
+• 种子用户评价计划启动<br>
+• 监控数据，优化Listing<br>
+• 第二批货（铁路）同步发出
+</div>
+<div class="tl-item">
+<b>第11-16周：成长期</b><br>
+• 持续优化广告和Listing<br>
+• 积累评价，提升自然排名<br>
+• 根据销售数据调整SKU组合<br>
+• 准备第三批补货
+</div>
+</div>
+</div>
+
+<!-- 成本核算 -->
+<div class="box" id="cost">
+<h2>💰 成本与利润核算</h2>
+
+<h3>单台成本拆解（主力款）</h3>
+<table>
+<tr><th>项目</th><th>金额(₽)</th><th>占比</th><th>备注</th></tr>
+<tr><td>出厂价</td><td>3,500-4,500</td><td>35-40%</td><td>¥450×11₽/¥ ≈ 4,950₽（按汇率波动）</td></tr>
+<tr><td>国际物流</td><td>400-700</td><td>5-7%</td><td>铁路约$4/kg × 3kg × 90₽/$</td></tr>
+<tr><td>清关+关税</td><td>500-800</td><td>5-8%</td><td>关税5-10% + 报关费分摊</td></tr>
+<tr><td>EAC认证分摊</td><td>100-200</td><td>1-2%</td><td>$2,000认证费 ÷ 首批200台</td></tr>
+<tr><td>Ozon佣金</td><td>800-1,200</td><td>8-12%</td><td>品类佣金约8-12%</td></tr>
+<tr><td>FBO仓储+配送</td><td>300-500</td><td>3-5%</td><td>按体积和存储天数计费</td></tr>
+<tr><td>广告费分摊</td><td>500-1,000</td><td>5-10%</td><td>ACoS 10-15%目标</td></tr>
+<tr><td>俄语包装+标签</td><td>50-100</td><td>~1%</td><td>工厂定制</td></tr>
+<tr><td style="font-weight:bold;background:#fff8e1">总成本</td><td style="font-weight:bold;color:#e94560">6,150-9,000</td><td style="font-weight:bold">62-75%</td><td></td></tr>
+<tr><td style="font-weight:bold;background:#e8f5e9">售价</td><td style="font-weight:bold">9,990-14,990</td><td></td><td></td></tr>
+<tr><td style="font-weight:bold;background:#e8f5e9;color:#28a745">毛利</td><td style="font-weight:bold;color:#28a745">2,500-6,000</td><td style="font-weight:bold;color:#28a745">25-40%</td><td></td></tr>
+</table>
+
+<h3>首批启动资金预估</h3>
+<table>
+<tr><th>项目</th><th>金额</th><th>备注</th></tr>
+<tr><td>首批采购（200台主力款）</td><td>¥90,000-110,000</td><td>含包装定制</td></tr>
+<tr><td>EAC认证</td><td>¥12,000-20,000</td><td>1-2个SKU</td></tr>
+<tr><td>国际物流（空运首批100台）</td><td>¥8,000-12,000</td><td>后续铁路更便宜</td></tr>
+<tr><td>Listing素材（拍照+视频+翻译）</td><td>¥5,000-10,000</td><td>专业拍摄+俄语翻译</td></tr>
+<tr><td>首月广告预算</td><td>¥8,000-15,000</td><td>约30,000-50,000₽</td></tr>
+<tr><td>备用金（售后+补货）</td><td>¥20,000-30,000</td><td></td></tr>
+<tr><td style="font-weight:bold;color:#e94560">合计</td><td style="font-weight:bold;color:#e94560">¥143,000-197,000</td><td>约15-20万人民币</td></tr>
+</table>
+
+<div class="tip tip-g">
+<b>回本预估：</b>按日均5台、客单价12,000₽、毛利率30%计算，月毛利约54,000₽(≈¥4,200)，首批投入约5-6个月回本。旺季(3-5月)日均可达10-15台，回本周期缩短至3-4个月。
+</div>
+</div>
+
+<!-- Checklist -->
+<div class="box" id="checklist">
+<h2>✅ 启动Checklist</h2>
+
+<h3>第一阶段：准备期</h3>
+<ul class="checklist">
+<li>确定主力SKU规格（1-2款）</li>
+<li>联系3-5家1688工厂，索要报价和样品</li>
+<li>联系EAC认证代理，确认费用和周期</li>
+<li>确认俄罗斯公司/进口商资质</li>
+<li>开通/确认Ozon卖家账号</li>
+<li>确定物流方案（空运首批+铁路后续）</li>
+</ul>
+
+<h3>第二阶段：认证+生产</h3>
+<ul class="checklist">
+<li>提交EAC认证申请，送样测试</li>
+<li>下首批生产订单</li>
+<li>设计俄语包装和说明书</li>
+<li>准备产品铭牌（含EAC标志+俄语信息）</li>
+<li>拍摄产品图片和视频</li>
+<li>撰写俄语Listing文案</li>
+</ul>
+
+<h3>第三阶段：上架+推广</h3>
+<ul class="checklist">
+<li>EAC声明注册完成</li>
+<li>首批货物发出</li>
+<li>清关完成，送入Ozon FBO仓</li>
+<li>创建Listing，上传所有素材</li>
+<li>设置价格和库存</li>
+<li>开启搜索推广广告</li>
+<li>启动种子用户评价计划</li>
+</ul>
+
+<h3>第四阶段：运营优化</h3>
+<ul class="checklist">
+<li>每日监控广告数据</li>
+<li>积累10+条评价</li>
+<li>优化关键词和出价</li>
+<li>第二批补货（铁路）发出</li>
+<li>开启商品推广（竞品定向）</li>
+<li>制作Rich Content/A+内容</li>
+<li>月度P&L复盘</li>
+</ul>
+</div>
+
+<a href="ozon_full_plan.html" class="back">← 返回总计划</a>
+
+<footer>
+擦窗机器人Ozon运营全流程 | 更新于 2026年4月
+</footer>
+
+</div>
+</body>
+</html>
